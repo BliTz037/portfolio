@@ -60,7 +60,7 @@ export default function Home() {
           {ME_DATA.socials.map((social) => {
             const Icon = social.icon;
             return (
-              <Button className={`${social.color}`} key={social.name}>
+              <Button className={`${social.color} active:${social.activeColor}`} key={social.name} >
                 <Icon className="mr-2 h-4 w-4" />
                 <a href={social.url}>{social.name}</a>
               </Button>
