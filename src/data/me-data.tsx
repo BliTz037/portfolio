@@ -23,7 +23,7 @@ export const ME_DATA = {
     },
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/tom-rives-6b4b2b1b2/",
+      url: "https://www.linkedin.com/in/tom-rives/",
       icon: LinkedInLogoIcon,
       color: "bg-sky-500"
     },
