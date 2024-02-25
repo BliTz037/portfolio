@@ -10,9 +10,9 @@ export default function Home() {
         <div className="flex md:flex-row flex-col gap-4">
           <div className="flex flex-col flex-col-reverse gap-4 md:flex-row items-center justify-center">
             <div className="flex flex-col">
-              <h1 className="text-6xl font-bold">Tom Rives</h1>
+              <h1 className="text-6xl font-bold">{ME_DATA.name ?? "Anonymous"}</h1>
               <p className="text-2xl text-center mt-4 text-gray-700">
-                Backend Engineer
+                {ME_DATA.role ?? "Developer"}
                 {ME_DATA.company ? (
                   <>
                     <span> at </span>
@@ -26,7 +26,7 @@ export default function Home() {
             </div>
             <div>
               <Image
-                src="/profile.jpg"
+                src={ME_DATA.profilePicture ?? "#"}
                 alt="Profile Picture of Tom Rives"
                 width={100}
                 height={100}
