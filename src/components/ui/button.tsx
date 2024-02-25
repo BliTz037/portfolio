@@ -55,12 +55,4 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 )
 Button.displayName = "Button"
 
-export function ButtonGithubIcon() {
-  return (
-    <Button variant="outline" size="icon">
-      <GitHubLogoIcon className="h-4 w-4" />
-    </Button>
-  )
-}
-
 export { Button, buttonVariants }
