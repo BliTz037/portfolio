@@ -1,4 +1,4 @@
-import { Button, ButtonGithubIcon } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { ME_DATA } from "@/data/me-data";
 import { BackpackIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
@@ -7,32 +7,32 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen py-2">
       <div className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <div className="flex flex-wrap-reverse flex-col lg:flex-row gap-4 lg:flex-cols">
-          <div className="flex flex-col">
-            <h1 className="text-6xl font-bold">Tom Rives</h1>
-            <p className="text-2xl text-center mt-4 text-gray-700">
-              Backend Engineer
-              {ME_DATA.company ? (
-                <>
-                  <span> at </span>
-                  <a
-                    className="font-bold"
-                    href={ME_DATA.company.url}
-                  >{`@${ME_DATA.company.name}`}</a>
-                </>
-              ) : (
-                ""
-              )}
-            </p>
-          </div>
-          <div className="flex items-center justify-center">
-            <Image
-              src="/profile.jpg"
-              alt="Profile Picture of Tom Rives"
-              width={100}
-              height={100}
-              className="rounded-full"
-            />
+        <div className="flex md:flex-row flex-col gap-4">
+          <div className="flex flex-col flex-col-reverse gap-4 md:flex-row items-center justify-center">
+            <div className="flex flex-col">
+              <h1 className="text-6xl font-bold">Tom Rives</h1>
+              <p className="text-2xl text-center mt-4 text-gray-700">
+                Backend Engineer
+                {ME_DATA.company ? (
+                  <>
+                    <span> at </span>
+                    <a
+                      className="font-bold"
+                      href={ME_DATA.company.url}
+                    >{`@${ME_DATA.company.name}`}</a>
+                  </>
+                ) : null}
+              </p>
+            </div>
+            <div>
+              <Image
+                src="/profile.jpg"
+                alt="Profile Picture of Tom Rives"
+                width={100}
+                height={100}
+                className="rounded-full"
+              />
+            </div>
           </div>
         </div>
         <div className="flex-row gap-4 mt-6 hidden md:flex">
