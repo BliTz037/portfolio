@@ -27,7 +27,7 @@ export default function Home() {
             <div>
               <Image
                 src={ME_DATA.profilePicture ?? "#"}
-                alt="Profile Picture of Tom Rives"
+                alt={"Profile Picture of " + ME_DATA.name}
                 width={100}
                 height={100}
                 className="rounded-full"
@@ -44,7 +44,7 @@ export default function Home() {
               const Icon = social.icon;
               return (
                 <Button variant="outline" size="icon" key={social.name}>
-                  <a href={social.url}>
+                  <a href={social.url} title={`${ME_DATA.name} ${social.name}`}>
                     <Icon className="h-4 w-4" />
                   </a>
                 </Button>
@@ -62,7 +62,7 @@ export default function Home() {
             return (
               <Button className={`${social.color} active:${social.activeColor}`} key={social.name} >
                 <Icon className="mr-2 h-4 w-4" />
-                <a href={social.url}>{social.name}</a>
+                <a href={social.url} title={`${ME_DATA.name} ${social.name}`}>{social.name}</a>
               </Button>
             );
           })}
