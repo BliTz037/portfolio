@@ -6,6 +6,7 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { CodeIcon } from "@radix-ui/react-icons";
 
 interface Props {
   title: string;
@@ -20,6 +21,7 @@ export function ProjectCard({ title, description, tags, link }: Props) {
       <CardHeader className="">
         <div className="space-y-1">
           <CardTitle className="text-base">
+            <CodeIcon width={32} height={32} />
             {link ? (
               <a
                 href={link}
