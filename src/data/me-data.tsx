@@ -13,7 +13,7 @@ export const ME_DATA = {
     url: "https://www.withings.com",
   },
   profilePicture: "/profile_2.JPG",
-  cvUrl: "https://cv.blitzlab.ninja",
+  cvUrl: "https://cv.tomrives.me",
   socials: [
     {
       name: "GitHub",
