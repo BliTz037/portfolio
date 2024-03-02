@@ -8,7 +8,7 @@ export function Header() {
     <div className="flex items-center justify-between px-2">
       <div className="flex flex-row gap-3 p-5">
         <CodeIcon width={32} height={32} />
-        <h1 className="font-heading text-xl md:text-2xl">Tom Rives</h1>
+        <h1 className="font-heading text-xl md:text-2xl font-bold">Tom Rives</h1>
       </div>
       <div>
         <Link href={ME_DATA.cvUrl}>

@@ -1,12 +1,7 @@
 import { Header } from "@/components/header";
+import { ProjectCard } from "@/components/project-card";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { ME_DATA } from "@/data/me-data";
 import Image from "next/image";
 
@@ -41,26 +36,27 @@ export default function Home() {
             ) : null}{" "}
             in Paris.
           </p>
-        <div className="flex-row gap-4 mt-6 md:flex">
-          <div className="flex space-x-2">
-            {ME_DATA.socials.map((social) => {
-              const Icon = social.icon;
-              return (
-                <Button variant="outline" size="icon" key={social.name}>
-                  <a href={social.url} title={`${ME_DATA.name} ${social.name}`}>
-                    <Icon className="h-4 w-4" />
-                  </a>
-                </Button>
-              );
-            })}
+          <div className="flex-row gap-4 mt-6 md:flex">
+            <div className="flex space-x-2">
+              {ME_DATA.socials.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <Button variant="outline" size="icon" key={social.name}>
+                    <a
+                      href={social.url}
+                      title={`${ME_DATA.name} ${social.name}`}
+                    >
+                      <Icon className="h-4 w-4" />
+                    </a>
+                  </Button>
+                );
+              })}
+            </div>
           </div>
-        </div>
         </div>
         <div className="flex flex-col items-center gap-1 mt-5">
           <div>
-            <h2 className="text-3xl font-bold md:ml-1 text-center">
-              About me
-            </h2>
+            <h2 className="text-3xl font-bold md:ml-1 text-center">About me</h2>
             <ul className="md:list-disc list-disc md:text-xl p-10 text-sm">
               {ME_DATA.aboutMe.map((about, index) => (
                 <li key={index}>{about}</li>
@@ -69,30 +65,29 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center md:mt-2 mt-10">
             <h2 className="text-3xl text-center font-bold">Skills</h2>
-            <div className="flex flex-wrap justify-center gap-2 p-8">
+            <div className="flex flex-wrap justify-center gap-2 p-8 md:w-1/2">
               {ME_DATA.skills.map((skill, index) => (
-                <span
-                  key={index}
-                  className="bg-gray-100 p-2 rounded-md text-sm"
-                >
+                <Badge key={index} variant={"secondary"} className="text-sm">
                   {skill}
-                </span>
+                </Badge>
               ))}
             </div>
           </div>
         </div>
         <div className="flex flex-col items-center md:mt-2 mt-10">
-          <h2 className="text-3xl text-center font-bold">Project</h2>
+          <h2 className="text-3xl text-center font-bold">Projects</h2>
           <div className="flex flex-wrap justify-center gap-2 p-8">
-            <Card>
-              <CardHeader>
-                <CardTitle>Game Server Tracker</CardTitle>
-                <CardDescription>Card Description</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>Card Content</p>
-              </CardContent>
-            </Card>
+            {ME_DATA.projects.map((project) => {
+              return (
+                <ProjectCard
+                  key={project.title}
+                  title={project.title}
+                  description={project.description}
+                  tags={project.techStack}
+                  link={"link" in project ? project.link.href : undefined}
+                />
+              );
+            })}
           </div>
         </div>
       </main>

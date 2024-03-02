@@ -139,7 +139,7 @@ export const ME_DATA = {
       logo: null,
       link: {
         label: "github.com",
-        href: "https://github.com/BliTz037/Redditech",
+        href: "https://github.com/BliTz037/Whac-a-moleVR",
       },
     },
     {
