@@ -21,10 +21,10 @@ export default function Home() {
             />
           </div>
           <h1 className="md:text-6xl text-3xl font-bold p-2">
-            Hi ! I'm Tom 👋
+            {"Hi ! I'm Tom 👋"}
           </h1>
           <p className="md:text-2xl text-xl text-center mt-4 text-gray-700">
-            I'm a French 🇫🇷 {ME_DATA.role ?? "Developer"}{" "}
+            {"I'm a French 🇫🇷"} {ME_DATA.role ?? "Developer"}{" "}
             {ME_DATA.company ? (
               <>
                 <span> at </span>
