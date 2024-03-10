@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ME_DATA } from "@/data/me-data";
 import { BackpackIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -10,7 +11,9 @@ export default function Home() {
         <div className="flex md:flex-row flex-col gap-4">
           <div className="flex flex-col flex-col-reverse gap-4 md:flex-row items-center justify-center">
             <div className="flex flex-col">
-              <h1 className="text-6xl font-bold">{ME_DATA.name ?? "Anonymous"}</h1>
+              <h1 className="text-6xl font-bold">
+                {ME_DATA.name ?? "Anonymous"}
+              </h1>
               <p className="text-2xl text-center mt-4 text-gray-700">
                 {ME_DATA.role ?? "Developer"}
                 {ME_DATA.company ? (
@@ -60,9 +63,18 @@ export default function Home() {
           {ME_DATA.socials.map((social) => {
             const Icon = social.icon;
             return (
-              <Button className={`${social.color} active:${social.activeColor}`} key={social.name} >
-                <Icon className="mr-2 h-4 w-4" />
-                <a href={social.url} title={`${ME_DATA.name} ${social.name}`}>{social.name}</a>
+              <Button
+                className={`${social.color} active:${social.activeColor}`}
+                key={social.name}
+                asChild
+              >
+                <Link
+                  href={social.url}
+                  title={`${ME_DATA.name} ${social.name}`}
+                >
+                  <Icon className="mr-2 h-4 w-4" />
+                  {social.name}
+                </Link>
               </Button>
             );
           })}
