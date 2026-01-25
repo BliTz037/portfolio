@@ -12,7 +12,7 @@ export const ME_DATA = {
     name: "Withings",
     url: "https://www.withings.com",
   },
-  profilePicture: "/profile.JPG",
+  profilePicture: "/profil.jpg",
   cvUrl: "https://cv.tomrives.me",
   socials: [
     {
@@ -65,7 +65,7 @@ export const ME_DATA = {
       title: "GamePing",
       techStack: ["Swift", "SwiftUI", "NWConnection"],
       description: `GamePing is the easiest way to keep track of your favorite game servers. Monitor server status in real time across more than twenty supported games whether local or worldwide`,
-      logo: "/gameping1.png",
+      logo: "/gameping.png",
       link: {
         label: "apps.apple.com",
         href: "https://apps.apple.com/us/app/gameping/id6751515425",
