@@ -62,9 +62,17 @@ export default function Home() {
           </Button>
           {ME_DATA.socials.map((social) => {
             const Icon = social.icon;
+            const socialStyles: { [key: string]: string } = {
+              GitHub: "bg-gray-800 hover:bg-gray-700 text-white",
+              LinkedIn: "bg-sky-500 hover:bg-sky-400 text-white",
+              Medium: "bg-zinc-800 hover:bg-zinc-700 text-white",
+              Mail: "bg-slate-500 hover:bg-slate-400 text-white",
+            };
             return (
               <Button
-                className={`${social.color} active:${social.activeColor}`}
+                className={
+                  socialStyles[social.name] ?? "bg-gray-500 hover:bg-gray-400"
+                }
                 key={social.name}
                 asChild
               >

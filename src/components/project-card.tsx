@@ -7,21 +7,27 @@ import {
 } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { CodeIcon } from "@radix-ui/react-icons";
+import Image from "next/image";
 
 interface Props {
   title: string;
   description: string;
   tags: readonly string[];
   link?: string;
+  logo: string | null;
 }
 
-export function ProjectCard({ title, description, tags, link }: Props) {
+export function ProjectCard({ title, description, tags, link, logo }: Props) {
   return (
     <Card className="flex flex-col overflow-hidden border border-muted p-3 w-full md:w-1/3">
       <CardHeader className="">
         <div className="space-y-1">
           <CardTitle className="text-base">
-            <CodeIcon width={32} height={32} />
+            {logo ? (
+              <Image src={logo} alt={title} width={72} height={72} />
+            ) : (
+              <CodeIcon width={32} height={32} />
+            )}
             {link ? (
               <a
                 href={link}
